@@ -86,9 +86,14 @@ class Machine:
                 #raise Exception("Reached the end of lazy code without returning")
             elif command[0] == "lazy":
                 fend = pos+1
+                depth = 0
                 while fend < len(compiled):
-                    if compiled[fend] == self._end_statement:
+                    if self._id2op[compiled[fend] % self._numops] == "lazy":
+                        depth += 1
+                    if compiled[fend] == self._end_statement and depth == 0:
                         break
+                    if compiled[fend] == self._end_statement:
+                        depth -= 1
                     fend += 1
                 if end == len(compiled):
                     raise Exception("Lazy code definition never ended")

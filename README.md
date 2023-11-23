@@ -2,8 +2,8 @@
 
 *A virtual machine of the code block assembly language.*
 
-This repository holds the design concept of the VM alongside
-a Python implementation.
+This repository holds the design concept of the VM and compiler
+alongside Python implementations.
 
 ## Blombly VM specification
 

@@ -3,8 +3,12 @@ y = is(6);
 c1 = is(1);
 
 test = {
-    z = add(x,y);
-    z = add(c1,z);
+    test2 = {
+        z = add(x,y);
+        z = add(c1,z);
+        return(z);
+    }
+    z = test2();
     return(z);
 }
 
